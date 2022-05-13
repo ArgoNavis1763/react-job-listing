@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import Card from "./components/Card.js";
+import Header from "./components/Header.js";
+import "./App.css";
+import Data from "./data.json";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="bg-[#effafa] min-h-screen flex flex-col gap-5 items-center text-base">
+      <div>
+        <Header />
+      </div>
+      <div className="flex flex-col gap-5">
+        {Data.map((job) => {
+          return (
+            <Card
+              id={job.id}
+              company={job.company}
+              logo={job.logo}
+              new={job.new}
+              featured={job.featured}
+              position={job.position}
+              role={job.role}
+              level={job.level}
+              postedAt={job.postedAt}
+              contract={job.contract}
+              location={job.location}
+              languages={job.languages}
+              tools={job.tools}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 }
