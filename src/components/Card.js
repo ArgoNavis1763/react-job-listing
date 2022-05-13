@@ -1,5 +1,6 @@
 import New from "./New";
 import Featured from "./Featured";
+// import App from "../App;";
 
 function Card(props) {
   return (
@@ -38,6 +39,7 @@ function Card(props) {
             return (
               <div
                 className="bg-[#effafa] text-[#5ba4a4] rounded-md px-2 py-1"
+                // onClick={(event) => setFilters(event.target.value)}
                 key={index}
               >
                 {item}
@@ -45,7 +47,6 @@ function Card(props) {
             );
           })}
           {props.tools.map((item, index) => {
-            console.log(true);
             return (
               <div
                 className="bg-[#effafa] text-[#5ba4a4] rounded-md px-2 py-1"
